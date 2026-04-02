@@ -181,7 +181,7 @@ Software Settings
 
 // ================== SETTINGS ==================
 #define BAUD 9600          // Serial baud rate
-#define DEADZONE 100       // Joystick deadzone for smoother control
+#define DEADZONE 15       // Joystick deadzone for smoother control
 #define SEND_INTERVAL 50   // 50 ms = 20Hz update rate
 
 ------------------------- ⚙️ SETTINGS ⚙️ -------------------------
