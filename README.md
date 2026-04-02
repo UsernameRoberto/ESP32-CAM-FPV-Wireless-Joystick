@@ -163,16 +163,6 @@ The project is designed for clean, low-noise operation, perfect for **Arduino Me
 
 ---
 
-## 🔗 References
-
-- [ESP32-CAM Camera Web Server](https://randomnerdtutorials.com/esp32-cam-video-streaming-web-server-camera-home-assistant/)  
-- [HC-12 Wireless Serial Module](https://www.elecrow.com/wiki/index.php?title=HC-12)  
-- [Arduino L293 Motor Driver](https://www.arduino.cc/en/Tutorial/LibraryExamples/L293D)  
-
----
-
-
-
 ------------------------- ⚠️ IMPORTANT!!! -------------------------
 
 That way you simply plug the **HU-M16 joystick shield** onto the Arduino and hook the **HC-12** directly onto the joystick.  
