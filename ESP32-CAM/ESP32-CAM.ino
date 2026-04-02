@@ -133,7 +133,7 @@ static esp_err_t stream_handler(httpd_req_t *req){
     esp_camera_fb_return(fb);
 
     // 🔥 Small delay = stability + lower CPU load (unchanged)
-    vTaskDelay(1);   // much more responsive
+    vTaskDelay(2);   // much more responsive
     taskYIELD();     // 🔥 give CPU to other tasks
   }
 
@@ -952,11 +952,43 @@ updateFrame();
 /* ==========================
    LED Slider
    ========================== */
+let lastSendTime = 0;
+let pendingValue = null;
+let timer = null;
+
+const SEND_INTERVAL = 120; // 80–150ms is safe
+
 function setLED() {
     let val = document.getElementById("ledSlider").value;
     ledBrightness = parseInt(val);
-    document.getElementById("ledValue").innerText = "💡 Brightness: " + ledBrightness + "%";
-    fetch('/set_led?val=' + val);
+
+    document.getElementById("ledValue").innerText =
+        "💡 Brightness: " + ledBrightness + "%";
+
+    let now = Date.now();
+
+    // Send immediately if enough time passed
+    if (now - lastSendTime >= SEND_INTERVAL) {
+        fetch('/set_led?val=' + val);
+        lastSendTime = now;
+        pendingValue = null;
+    } else {
+        // Store latest value
+        pendingValue = val;
+
+        // Schedule one delayed send
+        if (!timer) {
+            timer = setTimeout(() => {
+                if (pendingValue !== null) {
+                    fetch('/set_led?val=' + pendingValue);
+                    lastSendTime = Date.now();
+                }
+                timer = null;
+                pendingValue = null;
+            }, SEND_INTERVAL);
+        }
+    }
+
     saveSettings();
 }
 
