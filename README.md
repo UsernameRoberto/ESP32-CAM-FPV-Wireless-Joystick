@@ -147,6 +147,10 @@ The project is designed for clean, low-noise operation, perfect for **Arduino Me
 |-- /ESP32-CAM
 |-- README.md
 |-- LICENSE
+|-- ESP32CAM_2026-04-02_01-42-11.jpg
+|-- cam1.png
+|-- cam2.png
+
 
 ---
 
