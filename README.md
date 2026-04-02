@@ -171,13 +171,13 @@ The project is designed for clean, low-noise operation, perfect for **Arduino Me
 
 ---
 
-+----------------------------------------+
-| 🎥 CPU Temp      💡 LED %      🔍 Zoom |
-|                                        |
-|             [Camera Stream]            |
-|                                        |
-| ⚡ Video Q   🎯 FPS   🎞️ JPEG Q  ⏱️ Time |
-+----------------------------------------+
++-------------------------------------------+
+| 🎥 CPU Temp      💡 LED %      🔍 Zoom   |
+|                                           |
+|             [Camera Stream]               |
+|                                           |
+| ⚡ Video Q   🎯 FPS   🎞️ JPEG Q  ⏱️ Time|
++-------------------------------------------+
 
 ------------------------- ⚠️ IMPORTANT!!! -------------------------
 
