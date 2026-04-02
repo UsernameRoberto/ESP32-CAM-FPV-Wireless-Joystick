@@ -14,7 +14,7 @@
 
 // ================== SETTINGS ==================
 #define BAUD 9600
-#define DEADZONE 100
+#define DEADZONE 15
 #define SEND_INTERVAL 50   // 20Hz (smooth RC feel)
 
 // ================== OBJECTS ==================
